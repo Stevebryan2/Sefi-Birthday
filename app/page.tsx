@@ -81,8 +81,6 @@ function QuizGatekeeper({ onUnlock }: { onUnlock: () => void }) {
   const [error, setError] = useState(false);
 
   const questions = [
-    { question: "Sebelum masuk, jawab dulu ya. Siapa cowok paling ganteng sedunia?", correctAnswers: ["kamu", "pacarku", "sayang", "steve", "bryan", "sayangku", "stevebryan", "stevebryan jonathan imanuel"] },
-    { question: `kapan tanggal ulang tahun aku? hehehe (Format: DD-MM-YYYY)`, correctAnswers: ["02-02-2004"] },
     { question: "kapan tanggal jadian kita hayooo? wkwkwkwk (Format: DD-MM-YYYY)", correctAnswers: ["09-09-2026"] }
   ];
 
