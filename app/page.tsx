@@ -32,7 +32,7 @@ const WISHES_DATA: WishItem[] = [
   { id: 11, name: "Diyan", category: "Others", isWide: true, message: `dd`, videoUrl: "assets/diyan.mp4" },
   
   // --- CG 73 (1 KOMPILASI TANPA TEKS) ---
-  { id: 12, name: "CG 73 Family", category: "CG", message: "", videoUrl: "assets/cg73.mp4" },
+  { id: 12, name: "CG 73 Family", category: "CG", message: "", videoUrl: "assets/cg7git3.mp4" },
   
   // --- KOKO (TAB BARU KHUSUS KAKAK LAKI-LAKI) ---
   { id: 25, name: "Koko Kevin", category: "koko", message: "Happy 22nd Birthday, Sef! 🎂🤍 May God bless you always, guide you in every step, and fill your 22nd year with lots of joy, love, and beautiful memories. Stay happy and keep shining!" },
@@ -58,9 +58,8 @@ const WISHES_DATA: WishItem[] = [
   { id: 31, name: "Marcel", category: "Wish", message: "Happy birthday Sefii... Long long umurnyaa, healthy always dan Jesus bless youuu.... 🥳🥳🙌🏻"},
   { id: 32, name: "Ko Vilu", category: "Wish", message: "HBD seff, WUATB GBU 🥳🎉, semoga di umur yang baru makin sukses, makin bertumbuh & makin banyak hal baik yang datang yaa" },
   { id: 33, name: "Sera", category: "Wish", message: "happy birthday cecee!! 🥳"},
-  { id: 34, name: "David", category: "Wish", message: "Happy birthday Sefii... Long long umurnyaa, healthy always dan Jesus bless youuu.... 🥳🥳🙌🏻"},
-  { id: 35, name: "Oskar", category: "Wish", message: "HBD seff, WUATB GBU 🥳🎉, semoga di umur yang baru makin sukses, makin bertumbuh & makin banyak hal baik yang datang yaa" },
-  { id: 36, name: "Sera", category: "Wish", message: "happy birthday cecee!! 🥳"},
+  { id: 34, name: "David", category: "Wish", message: "Happy birthday ce Sefii 🥳🥳 God Bless ya, moga langgeng tros gacor"},
+  { id: 35, name: "Oskar", category: "Wish", message: "happy birthday sefiii 🖐️😝🖐️, WUATB N GBU 🥳🥳" },
 ];
 
 const BACKGROUND_PHOTOS = [
