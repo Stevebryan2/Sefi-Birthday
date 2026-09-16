@@ -32,11 +32,18 @@ const WISHES_DATA: WishItem[] = [
   { id: 11, name: "Diyan", category: "Others", isWide: true, message: `dd`, videoUrl: "assets/diyan.mp4" },
   
   // --- CG 73 (1 KOMPILASI TANPA TEKS) ---
-  { id: 12, name: "CG 73 Family", category: "CG", message: "", videoUrl: "assets/cg7git3.mp4" },
+  { id: 12, name: "CG 73 Family", category: "CG", message: "", videoUrl: "assets/cg73.mp4" },
   
-  // --- KOKO (TAB BARU KHUSUS KAKAK LAKI-LAKI) ---
-  { id: 25, name: "Koko Kevin", category: "koko", message: "Happy 22nd Birthday, Sef! 🎂🤍 May God bless you always, guide you in every step, and fill your 22nd year with lots of joy, love, and beautiful memories. Stay happy and keep shining!" },
+  // --- KOKO & CE PIPIN (TAB KELUARGA) ---
+  { id: 25, name: "Ko Kevin", category: "koko", message: "Happy 22nd Birthday, Sef! 🎂🤍 May God bless you always, guide you in every step, and fill your 22nd year with lots of joy, love, and beautiful memories. Stay happy and keep shining!" },
+  { id: 36, name: "Ce Pipin", category: "koko", message:  `HAPPY BDAYY SEFIII!!
+Congrats yaa, finally entering your next chapter of life! (uda lulus dan mulai kerjaa)
 
+Hope this new chapter brings u lots of happiness, good things, and exciting experiences! 
+
+Yang paling penting, terus andalkan Tuhan dalam segala sesuatu yaa. 
+
+God bless u always & wishing u all the best for this new chapter! 🤍✨` },
   // --- WISHES ---
   { id: 13, name: "Justin", category: "Wish", message: "hepi bretdayy ci sefii smoga panjang umur sehat selalu Tuhan Yesus memberkatii muehehe" },
   { id: 14, name: "Michelle", category: "Wish", message: "happiest bday cii sefi! hopee ur bday is as special as u areee. may God bless u💗" },
@@ -269,13 +276,13 @@ function VhsPlayerComponent({ videoUrl, onPhaseChange }: { videoUrl: string, onP
 }
 
 // ==========================================
-// 4b. THE VINTAGE POSTCARD (KHUSUS TAB KOKO)
+// 4b. THE VINTAGE POSTCARD (KHUSUS TAB KELUARGA)
 // ==========================================
 function VintagePostcard({ item }: { item: WishItem }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="w-full flex justify-center py-10 md:py-20 z-20 relative animate-fadeIn" style={{ perspective: '2500px' }}>
+    <div className="w-full flex justify-center py-6 md:py-10 z-20 relative animate-fadeIn" style={{ perspective: '2500px' }}>
       <div 
         onClick={() => setIsFlipped(!isFlipped)}
         className={`relative w-[340px] md:w-[600px] lg:w-[700px] h-[480px] md:h-[400px] cursor-pointer transition-all duration-700 ease-in-out preserve-3d shadow-2xl hover:scale-105 ${isFlipped ? 'rotate-y-180' : 'hover:-rotate-2 rotate-1'}`}
@@ -287,7 +294,7 @@ function VintagePostcard({ item }: { item: WishItem }) {
            
            <Send className="w-10 h-10 md:w-14 md:h-14 text-[#8C6D46] mb-6 opacity-40 -rotate-12" />
            <h3 className="text-4xl md:text-5xl text-[#3E2723] text-center mb-4 leading-tight drop-shadow-sm" style={{ fontFamily: "'Brush Script MT', cursive, serif" }}>
-             To my annoying <br/> but lovely sister...
+             To my lovely <br/> sister...
            </h3>
            
            {/* Hiasan garis */}
@@ -642,7 +649,7 @@ function MainContent() {
     { id: "others", label: "Others" },
     { id: "CG", label: "CG 73" },
     { id: "Wish", label: "Wishes"},
-    { id: "koko", label: "Koko"}, 
+    { id: "koko", label: "Ko Kevin & Ce Pipin"}, 
     { id: "yours", label: "For You 🤍" }
   ];
 
@@ -703,7 +710,7 @@ function MainContent() {
         </div>
         
         <h1 className={`text-4xl sm:text-5xl md:text-6xl font-serif tracking-tight mb-6 drop-shadow-xl transition-colors duration-1000 ${isYoursMode ? "text-neutral-300" : "text-white"}`}>
-          {isYoursMode ? "For Sefi," : isScrapbookMode ? "Our Infinite Chapter" : isBoardMode ? "The Wall of Love" : isCinemaMode ? "Sefi's Mini Cinema" : isCgMode ? "CG 73 Memories" : isKokoMode ? "From Big Bro" : "Happy Birthday Sefi"} 
+          {isYoursMode ? "For Sefi," : isScrapbookMode ? "Our Infinite Chapter" : isBoardMode ? "The Wall of Love" : isCinemaMode ? "Sefi's Mini Cinema" : isCgMode ? "CG 73 Memories" : isKokoMode ? "From Ko Kevin & Ce Pipin" : "Happy Birthday Sefi"} 
           <span className={`italic relative whitespace-nowrap ${isYoursMode ? "text-[#D4C4A8]" : "text-white"} ${isBoardMode || isScrapbookMode || isCinemaMode || isYoursMode || isCgMode || isKokoMode ? 'hidden' : ''}`}> -CG 73<span className="absolute bottom-1 sm:bottom-2 left-0 w-full h-3 sm:h-4 bg-[#FBEF7A] -z-10 rounded-full opacity-80 rotate-1"></span></span>
         </h1>
       </header>
@@ -792,9 +799,13 @@ function MainContent() {
           <VhsPlayerComponent videoUrl={activeWishes[0].videoUrl || ""} onPhaseChange={setVhsPhase} />
         )}
 
-        {/* TAB BARU: KOKO (VINTAGE POSTCARD) */}
+        {/* TAB BARU: KOKO & CE PIPIN (VINTAGE POSTCARD) */}
         {isKokoMode && activeWishes.length > 0 && (
-          <VintagePostcard item={activeWishes[0]} />
+          <div className="flex flex-col gap-12 lg:gap-16 items-center w-full">
+            {activeWishes.map((item) => (
+              <VintagePostcard key={item.id} item={item} />
+            ))}
+          </div>
         )}
 
       </main>
